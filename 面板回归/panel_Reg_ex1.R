@@ -1,4 +1,4 @@
-library(plm)
+library(plm) 
 stu <- bruceR::import("panel.xlsx") |> 
   pdata.frame(index = c("id", "week"))
 stu

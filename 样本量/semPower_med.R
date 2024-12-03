@@ -86,3 +86,4 @@ mutil_powerMed_hoc <- semPower.powerMediation(
   loadings = loadings
 )
 summary(mutil_powerMed_hoc)
+

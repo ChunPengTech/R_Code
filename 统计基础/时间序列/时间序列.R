@@ -1,7 +1,7 @@
 # 1. 加载所需包，打开数据集
 
-library(forecast) #载入所需包
-library(tseries) #载入所需包
+library(forecast)
+library(tseries)
 library(bruceR)
 
 data(Nile) #打开数据集

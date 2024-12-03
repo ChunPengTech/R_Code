@@ -1,4 +1,3 @@
-# 载入数据
 library(bruceR)
 set.wd()
 data <- import("data304n.csv", as = "data.frame")

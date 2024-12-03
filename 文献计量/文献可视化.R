@@ -3,8 +3,6 @@ library(bibliometrix)
 # 打开shiny程序
 biblioshiny()
 
-# 代码运行
-
 # Data loading and converting 数据加载和转换 -----------------------
 
 file <- "ai.txt"

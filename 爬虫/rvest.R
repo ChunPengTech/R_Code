@@ -1,4 +1,3 @@
-# install.packages("rvest")
 library(rvest)
 library(bruceR)
 
