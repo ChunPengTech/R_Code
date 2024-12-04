@@ -24,8 +24,9 @@ car::qqPlot(data$y,
   col.lines = "red"
 )
 
-ggplot2::ggplot(data,aes(sample = y)) +
-  stat_qq() + stat_qq_line()
+ggplot2::ggplot(data, aes(sample = y)) +
+  stat_qq() +
+  stat_qq_line()
 
 ggplot2::ggplot(data, aes(y)) +
   geom_histogram() +
@@ -50,8 +51,8 @@ anscombe.test(data$y) # 峰度检验
 
 # 方差齐性检验-----------------------------------------
 
-car::leveneTest(y~edu, data) ## 不要求数据（y）的正态性
+car::leveneTest(y ~ edu, data) ## 不要求数据（y）的正态性
 
-performance::check_homogeneity(lm(y~edu, data))
+performance::check_homogeneity(lm(y ~ edu, data))
 
-bartlett.test(y~edu, data)
+bartlett.test(y ~ edu, data)

@@ -41,4 +41,4 @@ fit.km
 fviz_cluster(fit.km, data = df)
 
 # aggregate()函数查看每个类中变量的均值
-aggregate(USArrests, by=list(cluster=fit.km$cluster), mean)
+aggregate(USArrests, by = list(cluster = fit.km$cluster), mean)

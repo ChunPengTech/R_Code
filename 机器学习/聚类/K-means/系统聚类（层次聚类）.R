@@ -121,4 +121,3 @@ legend("topright",
   pch = c(20, 20, 20, 20, 20), bty = "n", pt.cex = 2, cex = 1,
   text.col = "black", horiz = FALSE, inset = c(0, 0.1),
 )
-
