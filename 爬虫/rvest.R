@@ -9,8 +9,6 @@ NAME <- HTML %>% html_nodes("#container > div.list-contents.theme-ajk-listcont >
 NAME
 NAME %>% html_text()
 
-#####################################################################
-
 # -------- 爬取BOSS直聘数据（数据分析职位） --------
 
 url <- "https://www.zhipin.com/web/geek/job?query=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"
