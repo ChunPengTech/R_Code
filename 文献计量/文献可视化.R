@@ -3,13 +3,13 @@ library(bibliometrix)
 # 打开shiny程序
 biblioshiny()
 
-# Data loading and converting 数据加载和转换 -----------------------
+# -------- Data loading and converting 数据加载和转换 --------
 
 file <- "ai.txt"
 
 M <- convert2df(file = file, dbsource = "wos", format = "plaintext")
 
-# Bibliometric Analysis 书目分析 -----------------------
+# -------- Bibliometric Analysis 书目分析 --------
 
 # 第一步是对数据进行描述性分析。函数 biblioAnalysis 返回一个 "bibliometrix "类对象。
 results <- biblioAnalysis(M, sep = ";")
