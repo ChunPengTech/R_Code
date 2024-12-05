@@ -5,14 +5,16 @@ stu
 skimr::skim(stu)
 
 
-# pooled regression 混合效应（线性回归）
+# -------- pooled regression 混合效应（线性回归） --------
+
 pooled <- plm(y ~ x, data = stu, model = "pooling")
 summary(pooled)
 bruceR::model_summary(pooled)
 stargazer::stargazer(pooled, type = "text")
 
 
-# fixed effects model 固定效应
+# -------- fixed effects model 固定效应） --------
+
 ind.fe <- plm(y ~ x,
   data = stu,
   effect = "individual", model = "within"
@@ -34,7 +36,8 @@ bruceR::model_summary(list(ind.fe, period.fe, twoway.fe))
 stargazer::stargazer(ind.fe, period.fe, twoway.fe, type = "text")
 
 
-# random effects model 随机效应
+# -------- random effects model 随机效应） --------
+
 twoway.re <- plm(y ~ x, stu,
   effect = "twoway", model = "random"
 )
@@ -46,6 +49,8 @@ ind.re <- plm(y ~ x, stu,
 summary(ind.re)
 
 bruceR::model_summary(list(twoway.re, ind.re))
+
+# -------- 模型选择 --------
 
 # redundant fixed effect test
 pFtest(ind.fe, pooled) ## 前固定，后混合

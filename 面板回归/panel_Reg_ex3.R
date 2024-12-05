@@ -24,13 +24,11 @@ pdim(data)
 
 #-----------混合效应--------------
 
-# pooled regression 混合效应(截面数据处理)
 pooled <- plm(patent ~ support + Size + Lev + Roa + PPE + Capital + Cash + Gdp, data = data, model = "pooling")
 summary(pooled)
 
 #-----------固定效应--------------
 
-# fixed effects model 固定效应
 ## 双固定
 twoway.fe <- plm(patent ~ support + Size + Lev + Roa + PPE + Capital + Cash + Gdp, data = data, effect = "twoway", model = "within")
 summary(twoway.fe)
@@ -46,8 +44,6 @@ summary(time.fe)
 bruceR::model_summary(list(twoway.fe, ind.fe, time.fe))
 
 #-----------随机效应--------------
-
-# random effects model 随机效应
 
 ## 双随机
 twoway.re <- plm(patent ~ support + Size + Lev + Roa + PPE + Capital + Cash + Gdp, data = data, effect = "twoway", model = "random")
@@ -66,9 +62,7 @@ bruceR::model_summary(list(twoway.re, ind.re, time.re))
 
 #-----------模型汇总--------------
 
-# 不同效应模型汇总
 bruceR::model_summary(list(pooled, twoway.fe, twoway.re))
-
 
 #-----------模型选择--------------
 
