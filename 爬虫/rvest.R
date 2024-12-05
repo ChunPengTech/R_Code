@@ -1,9 +1,7 @@
 library(rvest)
 library(bruceR)
 
-#####################################################################
-
-# 简单上手
+# -------- 简单上手 --------
 
 HTML <- read_html(x = "https://hz.fang.anjuke.com/loupan/xiaoshanqu_1919/?from=loupan_index_crumb")
 HTML
@@ -13,7 +11,7 @@ NAME %>% html_text()
 
 #####################################################################
 
-# 爬取BOSS直聘数据（数据分析职位）
+# -------- 爬取BOSS直聘数据（数据分析职位） --------
 
 url <- "https://www.zhipin.com/web/geek/job?query=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"
 HTML <- read_html(url)
@@ -27,9 +25,7 @@ CompanyName <- HTML %>% html_nodes(".company-name") %>% html_text()
 Result <- data.frame(JobName, JobArea, Salary, CompanyName)
 head(Result)
 
-############################################################
-
-# 谷歌学术panda985
+# -------- 谷歌学术panda985 --------
 
 url <- "https://sc.panda985.com/scholar?hl=zh-cn&q=knowledge+management"
 
@@ -45,9 +41,8 @@ head(Result)
 
 Result %>% export(file = "Result.xlsx")
 
-#####################################################################
 
-# 谷歌学术panda985循环1-10页
+# -------- 谷歌学术panda985循环1-10页 --------
 
 library(tidyverse)
 
@@ -77,7 +72,7 @@ Paper_inf %>% export(file = "Result_1-10.xlsx")
 
 #####################################################################
 
-#豆瓣新片榜
+# -------- 豆瓣新片榜 --------
 
 urlnew <-  "https://movie.douban.com/chart"
 
@@ -87,9 +82,8 @@ HTMLN %>% html_nodes(xpath = "//td[2]/div/a") %>% html_text2(preserve_nbsp = F)
 ## html_text(trim=T) 删除前导和尾随空格
 ## html_text2(preserve_nbsp = F) 删除不间断空格
 
-#####################################################################
 
-# 爬取芳华豆瓣数据
+# -------- 爬取芳华豆瓣数据 --------
 
 url_fanghua <-  "https://movie.douban.com/subject/26862829/"
 
@@ -124,9 +118,7 @@ HTML %>% html_nodes(xpath = "//*[contains(concat( ' ', @class, ' ' ), concat( ' 
 Reviews <- HTML %>% html_nodes(xpath = "//*[(@id = 'reviews-wrapper')]") %>% html_text()
 Reviews
 
-#####################################################################
-
-# 爬取链家网二手房数据
+# -------- 爬取链家网二手房数据 --------
 
 #加载所需的包：
 library(xml2)
