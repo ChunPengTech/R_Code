@@ -131,7 +131,7 @@ $$
 
 <a href="#Sobel 1982">Sobel (1982)</a> 提出了一种基于抽样分布为正态分布的检验法对中介效应进行检验。
 
-检验统计量为 $z=\hat{a}\hat{b}/s_{ab}$，其中 $\hat{a}$ 和 $\hat{b}$ 分别是 a 和 b 的估计值， $\hat{a}\hat{b}$ 的标准误为：$se(ab)=\sqrt{\hat{b}^2 se_a^2 +\hat{a}^2se_b^2}$。 $se_a$ 和 $se_b$ 分别是 $\hat{a}$ 和 $\hat{b}$ 的标准误。$|z| ＞ 1.96$，说明 $p < 0.05$，中介效应存在。
+检验统计量为 $z=\hat{a}\hat{b}/s_{ab}$，其中 $\hat{a}$ 和 $\hat{b}$ 分别是 a 和 b 的估计值， $\hat{a}\hat{b}$ 的标准误为： $se(ab)=\sqrt{\hat{b}^2 se_a^2 +\hat{a}^2se_b^2}$ 。 $se_a$ 和 $se_b$ 分别是 $\hat{a}$ 和 $\hat{b}$ 的标准误。 $|z| ＞ 1.96$ ，说明 $p < 0.05$，中介效应存在。
 
 
 
