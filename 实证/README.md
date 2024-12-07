@@ -16,13 +16,13 @@
 
 **以下罗列几个常用的检验方法**
 
-### Harman’s single-factor test
+### 哈曼单因子检验 (Harman’s single-factor test)
 
 未旋转的第一因子提取方差占总方差比重未超过 40% 或 50% <a href="#Podsakoff et al 2003">(Podsakoff et al., 2003;</a> <a href="#周浩 & 龙立荣 2004">周浩 & 龙立荣, 2004)</a> 
 
 **注意**：无论是 40% 还是 50% 都是经验说法，没有确切的证据证明一定可靠。
 
-### 控制不可测量的潜在方法因子（ULMC）
+### 控制不可测量的潜在方法因子 (ULMC)
 
 在原有特定因子的基础上，将所有项目作为方法因子（一般因子）的指标，建立双因子模型 (Bifactor model)。将方法因子作为全局因子,  特定因子作为局部因子，特定因子间要设置相关。一般认为若双因子模型与仅含特定因子的模型差异显著，则 CMB 严重 <a href="#Podsakoff et al 2003">(Podsakoff et al., 2003)</a>。更进一步的，<a href="#Chen et al 2012">Chen et al. (2012)</a> 认为双因子模型中的一般因子与特定因子之间应保持无相关性，特定因子之间也应保持无相关性。这种正交性的设定排除了因子之间可能存在的高度共线性，确保了模型的准确性和可解释性。
 
@@ -111,7 +111,7 @@ $$
 
 #### 江艇两步法
 
-考虑到逐步法中检验方程 (3) 存在估计偏误（共线性和内生性），<a href="#江艇 2022">江艇 (2022)</a> 提出了一种新的中介效应检验流程
+考虑到逐步法中检验方程 (3) 存在估计偏误 (共线性和内生性)，<a href="#江艇 2022">江艇 (2022)</a> 提出了一种新的中介效应检验流程
 
 
 $$
@@ -137,15 +137,13 @@ $$
 
 检验统计量为 $z=\hat{a}\hat{b}/s_{ab}$，其中 $\hat{a}$ 和 $\hat{b}$ 分别是 a 和 b 的估计值， $\hat{a}\hat{b}$ 的标准误为： $se(ab)=\sqrt{\hat{b}^2 se_a^2 +\hat{a}^2se_b^2}$ 。 $se_a$ 和 $se_b$ 分别是 $\hat{a}$ 和 $\hat{b}$ 的标准误。 $|z| ＞ 1.96$ ，说明 $p < 0.05$，中介效应存在。
 
-
-
 | z         | p         |
 | --------- | --------- |
 | z > 1.96  | p < 0.05  |
 | z > 2..58 | p < 0.01  |
 | z > 3.29  | p < 0.001 |
 
-- 模拟研究发现，Sobel 法的检验力高于逐步法，也就是说 Sobel 可以检验出比前者更多的中介效应，但如果两种方法检验的结果都显著，逐步检验结果要强于 Sobel 检验结果 <a href="#温忠麟 et al 2004">(温忠麟等, 2004)</a>，所以先进行依次检验, 不显著才需要做 Sobel 检验
+- 模拟研究发现，Sobel 法的检验力高于逐步法，也就是说 Sobel 可以检验出比前者更多的中介效应，但如果两种方法检验的结果都显著，逐步检验结果要强于 Sobel 检验结果 <a href="#温忠麟 et al 2004">(温忠麟等, 2004)</a>。所以先进行依次检验, 不显著才需要做 Sobel 检验
 - 检验系数乘积的统计量推导需要假设 $\hat{a}\hat{b}$ 服从正态分布，这一点很难保证，因为即使 $\hat{a}$ 和  $\hat{b}$ 服从正态分布也无法保证两者的乘积服从正态分布，因而 Sobel 检验也存在一定的局限性
 
 **(2) Bootstrapping**
@@ -182,7 +180,7 @@ $$
 
 #### 潜调节结构方程模型法 (Latent moderated structural equations method, LMS)
 
-LMS 将指标的联合分布近似为有限个条件正态分布的混合分布，并通过迭代得到参数的极大似然估计值，是一种广义的极大似然方法。<a href="#Klein & Moosbrugger 2000">Klein & Moosbrugger (2000)</a> 的研究表明 LMS 对潜变量交互效应的估计非常有效。
+LMS 将指标的联合分布近似为有限个条件正态分布的混合分布，并通过迭代得到参数的最大似然估计值，是一种广义的最大似然方法。<a href="#Klein & Moosbrugger 2000">Klein & Moosbrugger (2000)</a> 的研究表明 LMS 对潜变量交互效应的估计非常有效。
 
 **思路**：
 
@@ -199,13 +197,17 @@ LMS 将指标的联合分布近似为有限个条件正态分布的混合分布�
 
 #### 贝叶斯法
 
-有学者认为，当前使用最大似然 （ML） 和似然比卡方检验的分析不必要地应用了严格的模型来表示来自实质性理论的假设。这通常会导致对模型的拒绝和利用一系列可能的机会对模型修改。因此，<a href="#Muthén & Asparouhov 2012">Muthén & Asparouhov (2012)</a> 提出了一种使用贝叶斯分析进行因子分析和结构方程建模的新方法。基于抽样的贝叶斯方法较少的依赖大样本渐进理论，在小样本和复杂模型中依旧表现良好，对于潜变量的测量测量和结构模型的估计部分非常有用。 
+有学者认为，当前使用最大似然 (ML) 和似然比卡方检验的分析不必要地应用了严格的模型来表示来自实质性理论的假设。这通常会导致对模型的拒绝和利用一系列可能的机会对模型修改。因此，<a href="#Muthén & Asparouhov 2012">Muthén & Asparouhov (2012)</a> 提出了一种使用贝叶斯分析进行因子分析和结构方程建模的新方法。基于抽样的贝叶斯方法较少的依赖大样本渐进理论，在小样本和复杂模型中依旧表现良好，对于潜变量的测量测量和结构模型的估计部分非常有用。 <a href="#张沥今 et al 2019">张沥今等 (2019)</a> 介绍了贝叶斯结构方程模型的方法基础和优良特性及几类常用的贝叶斯结构方程模型及其应用现状。
 
-<a href="#张沥今 et al 2019">张沥今等 (2019)</a> 介绍了贝叶斯结构方程模型的方法基础和优良特性及几类常用的贝叶斯结构方程模型及其应用现状。[基于贝叶斯估计的结构方程模型 in Mplus (张沥今, 2019)](https://lijinzhang.com/share/190525_r_bsem.pdf) 
+贝叶斯法的实现流程及具体操作可参考如下内容
 
 [贝叶斯结构方程模型（Bayesian-SEM）简介及AMOS实现](https://zhuanlan.zhihu.com/p/432443299) 
 
 [Bayesian Analysis In Mplus: A Brief Introduction](https://www.statmodel.com/download/IntroBayesVersion%203.pdf)
+
+[基于贝叶斯估计的结构方程模型 in Mplus (张沥今, 2019)](https://lijinzhang.com/share/190525_r_bsem.pdf) 
+
+[Bayesian Latent Variable Analysis • blavaan](http://ecmerkle.github.io/blavaan/)
 
 ## 其他
 
@@ -225,23 +227,31 @@ LMS 将指标的联合分布近似为有限个条件正态分布的混合分布�
 
 **semPower package**
 
-
-
 **powerMediation package**
-
-
 
 ### 多重共线性 (Multicollinearity)
 
 ### 稳健性检验 (Robustness test)
 
-### CB SEM、PLS-SEM 还是 Bayesian SEM ？
+### CB SEM or PLS-SEM ？
 
+PLS-SEM 和 CB-SEM都是有用的统计分析方法，选择原因通常如下表所示。
 
+| 类别       | CB SEM                   | PLS-SEM                  |
+| ---------- | ------------------------ | ------------------------ |
+| 样本数量   | 大样本                   | 小样本 / 大样本          |
+| 模型复杂度 | 简单模型                 | 复杂模型                 |
+| 研究目的   | 验证性研究或理论模型检验 | 探索性研究或理论模型建立 |
+| 变量类型   | 反映性变量               | 反映性变量或形成性变量   |
+| 数据分布   | 正态分布                 | 正态 / 非正态分布        |
 
-PLS
+CB SEM 和 PLS-SEM 比较可参见 <a href="#Dash & Paul 2021">Dash & Paul (2021)</a> 的研究 
 
-Ghasemy, M., Teeroovengadum, V., Becker, J.-M., & Ringle, C. M. (2020). This fast car can move faster: A review of PLS-SEM application in higher education research. *Higher Education*, *80*(6), 1121-1152.
+PLS-SEM 的使用原因可参见 <a href="#Ringle et al 2012">Ringle et al. (2012)</a> 、<a href="#Hair et al 2019">Hair et al. (2019)</a> 的研究
+
+PLS-SEM 的汇报详细过程可参见 <a href="#Benitez et al 2020">Benitez et al. (2020)</a> 的研究
+
+Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**贝叶斯法**及 <a href="#Muthén & Asparouhov 2012">Muthén & Asparouhov (2012)</a> 的研究
 
 
 
@@ -267,13 +277,19 @@ Ghasemy, M., Teeroovengadum, V., Becker, J.-M., & Ringle, C. M. (2020). This fas
 
 <a name="Baron & Kenny 1986">Baron, R. M., & Kenny, D. A. (1986). The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. *Journal of personality and social psychology*, *51*(6), 1173.</a>
 
+<a name="Benitez et al 2020">Benitez, J., Henseler, J., Castillo, A., & Schuberth, F. (2020). How to perform and report an impactful analysis using partial least squares: Guidelines for confirmatory and explanatory IS research. *Information & Management*, *57*(2), 103168.</a>
+
 <a name="Chen et al 2012">Chen, F. F., Hayes, A., Carver, C. S., Laurenceau, J. P., & Zhang, Z. (2012). Modeling general and specific variance in multifaceted constructs: A comparison of the bifactor model to other approaches. *Journal of personality*, *80*(1), 219-251.</a>
 
 <a name="Chin 1998">Chin, W. W. (1998). The partial least squares approach to structural equation modeling. *Modern methods for business research/Lawrence Erlbaum Associates*.</a>
 
+<a name="Dash & Paul 2021">Dash, G., & Paul, J. (2021). CB-SEM vs PLS-SEM methods for research in social sciences and technology forecasting. *Technological Forecasting and Social Change*, *173*, 121092.</a>
+
 <a name="Fornell & Larcker 1981">Fornell, C., & Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. *Journal of marketing research*, *18*(1), 39-50.</a>
 
 <a name="Hair et al 2010">Hair J, F., Black W, C., Babin B, J., & Anderson R, E. (2010). Multivariate data analysis: A global perspective.</a>
+
+<a name="Hair et al 2019">Hair, J. F., Risher, J. J., Sarstedt, M., & Ringle, C. M. (2019). When to use and how to report the results of PLS-SEM. *European business review*, *31*(1), 2-24.</a>
 
 <a name="Henseler et al 2015">Henseler, J., Ringle, C. M., & Sarstedt, M. (2015). A new criterion for assessing discriminant validity in variance-based structural equation modeling. *Journal of the academy of marketing science*, *43*, 115-135.</a>
 
@@ -294,6 +310,8 @@ Ghasemy, M., Teeroovengadum, V., Becker, J.-M., & Ringle, C. M. (2020). This fas
 <a name="Podsakoff et al 2003">Podsakoff, P. M., MacKenzie, S. B., Lee, J. Y., & Podsakoff, N. P. (2003). Common method biases in behavioral research: a critical review of the literature and recommended remedies. *Journal of applied psychology*, *88*(5), 879.</a>
 
 <a name="Preacher & Hayes 2008">Preacher & Hayes 2008Preacher, K. J., & Hayes, A. F. (2008). Asymptotic and resampling strategies for assessing and comparing indirect effects in multiple mediator models. _Behavior research methods_, _40_(3), 879-891.    </a>
+
+<a name="Ringle et al 2012">Ringle, C. M., Sarstedt, M., & Straub, D. W. (2012). Editor's comments: a critical look at the use of PLS-SEM in" MIS Quarterly". *MIS quarterly*, iii-xiv.   </a>
 
 <a name="Sobel 1982">Sobel, M. E. (1982). Asymptotic intervals for indirect effects in structural equations models. In S. Leinhart (Ed.), *Sociological methodology 1982* (pp.290-312). San Francisco: Jossey-Bass.</a>
 
