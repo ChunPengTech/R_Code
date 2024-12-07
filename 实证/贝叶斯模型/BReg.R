@@ -12,7 +12,10 @@ y ~ c*x
 '
 
 bfit1 <- bsem(model = model1, data = data)
-summary(bfit1,standardized = TRUE)
+
+summary(bfit1, standardized = TRUE, rsquare=T)
+
+lavaan::fitMeasures(bfit1)
 
 # -------- 中介效应 --------
 
@@ -30,4 +33,5 @@ diff3 := med1 - med2
 '
 
 bfit2 <- bsem(model = model2, data = data)
+
 summary(bfit2)
