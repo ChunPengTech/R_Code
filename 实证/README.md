@@ -64,7 +64,7 @@ PLS-SEM 中可以添加一个无关的随机变量并使用内部模型的共线
 
 构建包含不同因子个数的验证性因子模型，若其他模型与原模型相比，各拟合指标均变差，且卡方检验显著，则说明原模型区分效度较好 <a href="#沈伊默 et al 2019">(沈伊默等, 2019;</a><a href="#郑少芳 et al 2020"> 郑少芳等, 2020)</a> 
 
-<p align="left"><font face="黑体" size=1.5>表1 卡方差异检验示例表格</font></p>
+<p align="left"><font face="黑体" size=2>表1 卡方差异检验示例表格</font></p>
 
 
 |      Model      |    χ2    |  df  | χ2/df |  CFI  |  TLI  | RMSEA | SRMR  | 模型比较 |     Δχ2     | Δdf  |
@@ -138,7 +138,7 @@ $$
 
 检验统计量为 $z=\hat{a}\hat{b}/s_{ab}$，其中 $\hat{a}$ 和 $\hat{b}$ 分别是 a 和 b 的估计值， $\hat{a}\hat{b}$ 的标准误为： $se(ab)=\sqrt{\hat{b}^2 se_a^2 +\hat{a}^2se_b^2}$ 。 $se_a$ 和 $se_b$ 分别是 $\hat{a}$ 和 $\hat{b}$ 的标准误。 $|z| ＞ 1.96$ ，说明 $p < 0.05$，中介效应存在。
 
-<p align="left"><font face="黑体" size=1.5>表2 Sobel法判断标准</font></p>
+<p align="left"><font face="黑体" size=2>表2 Sobel 法判断标准</font></p>
 
 
 |     z     |     p     |
@@ -317,7 +317,7 @@ Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**�
 
 <a name="Podsakoff et al 2003">Podsakoff, P. M., MacKenzie, S. B., Lee, J. Y., & Podsakoff, N. P. (2003). Common method biases in behavioral research: a critical review of the literature and recommended remedies. *Journal of applied psychology*, *88*(5), 879.</a>
 
-<a name="Preacher & Hayes 2008">Preacher & Hayes 2008Preacher, K. J., & Hayes, A. F. (2008). Asymptotic and resampling strategies for assessing and comparing indirect effects in multiple mediator models. _Behavior research methods_, _40_(3), 879-891.    </a>
+<a name="Preacher & Hayes 2008">Preacher, K. J., & Hayes, A. F. (2008). Asymptotic and resampling strategies for assessing and comparing indirect effects in multiple mediator models. _Behavior research methods_, _40_(3), 879-891.    </a>
 
 <a name="Ringle et al 2012">Ringle, C. M., Sarstedt, M., & Straub, D. W. (2012). Editor's comments: a critical look at the use of PLS-SEM in" MIS Quarterly". *MIS quarterly*, iii-xiv.   </a>
 
