@@ -44,6 +44,8 @@ PLS-SEM 中可以添加一个无关的随机变量并使用内部模型的共线
 
 ###  聚敛效度 (Convergent validity)
 
+若测量模型的因子载荷 (Factor Loading) 大于0.7，组合信度 (Composite Reliability, CR) 大于0.7，平均提取方差值(Average Variance Extracted, AVE) 大于0.5，则说明各变量具有较好的聚敛效度 <a href="#Hair et al 2010">(Hair et al., 2010)</a> 
+
 ### 区分效度 (Discriminant validity)
 
 #### Fornell-Larcker criterion
@@ -83,7 +85,6 @@ PLS-SEM 中可以添加一个无关的随机变量并使用内部模型的共线
 ### 中介效应检验 (Mediation effect test)
 
 #### 因果逐步法 (Casual step method)
-
 
 $$
 Y=cX+e_1··········(1)
@@ -271,6 +272,8 @@ Ghasemy, M., Teeroovengadum, V., Becker, J.-M., & Ringle, C. M. (2020). This fas
 <a name="Chin 1998">Chin, W. W. (1998). The partial least squares approach to structural equation modeling. *Modern methods for business research/Lawrence Erlbaum Associates*.</a>
 
 <a name="Fornell & Larcker 1981">Fornell, C., & Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. *Journal of marketing research*, *18*(1), 39-50.</a>
+
+<a name="Hair et al 2010">Hair J, F., Black W, C., Babin B, J., & Anderson R, E. (2010). Multivariate data analysis: A global perspective.</a>
 
 <a name="Henseler et al 2015">Henseler, J., Ringle, C. M., & Sarstedt, M. (2015). A new criterion for assessing discriminant validity in variance-based structural equation modeling. *Journal of the academy of marketing science*, *43*, 115-135.</a>
 
