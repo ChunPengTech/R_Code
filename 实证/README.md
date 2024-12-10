@@ -38,23 +38,39 @@ PLS-SEM 中可以添加一个无关的随机变量并使用内部模型的共线
 
 ## 信效度分析 (Reliability and validity test)
 
+<a href="#Cheung et al 2024">Cheung et al. (2024)</a> 对基于结构方程模型的信效度分析进行了全面的综述，提出了一个合理的建议，并根据其建议开发了一个名为 measureQ 的 R 包进行信效度分析。
+
 ### 信度
 
-分量表的内部一致性使用 Cronbach's alpha (α) 计算。若 α > 0.7 说明有足够的信度，最好加上置信区间 <a href="#Kelley & Pornprasertmanit 2016">(Kelley & Pornprasertmanit., 2016;</a> <a href="#McNeish 2018">McNeish, 2018)</a> 
+分量表的内部一致性使用 Cronbach's alpha (α) 计算。尽管 α 不基于 SEM，但它在 SEM 的研究中是最常报告的可靠性系数。 尽管 α 大于0.7 已被广泛用作足够可靠性的标准 <a href="#Kelley & Pornprasertmanit 2016">(Kelley & Pornprasertmanit., 2016)</a>，同时 <a href="#McNeish 2018">McNeish (2018)</a>  指出最好加上置信区间。但 <a href="#Lance et al 2006">Lance et al. (2006)</a> 建议大多数研究的可靠性标准应该为 0.8，α 为 0.7 表明量表的可靠性仅为中等。 
 
 ###  聚敛效度 (Convergent validity)
 
-若测量模型的因子载荷 (Factor Loading) 大于0.7，组合信度 (Composite Reliability, CR) 大于0.7，平均提取方差值(Average Variance Extracted, AVE) 大于0.5，则说明各变量具有较好的聚敛效度 <a href="#Hair et al 2010">(Hair et al., 2010)</a> 
+<a href="#Fornell & Larcker 1981">Fornell & Larcker (1981)</a> 提出使用可靠性来评估聚敛效度，然而，研究人员也认为，仅仅检查可靠性不足以评估聚敛效度。<a href="#Anderson & Gerbing 1988">Anderson & Gerbing (1988)</a> 建议通过检查标准化因子载荷的统计显著性来评估聚敛效度。然而，由于验证性因子分析可能涉及使用相对较大的样本（通常是 200 个或更多）以确保收敛和可靠的结果，即使是小的标准化因子负荷也可能具有统计显著性。因此，仅仅评估因子负荷的显著性可能不够。 研究人员提出了其他规则来评估标准化因子载荷的大小。例如， <a href="#Hair et al 2009">Hair et al. (2009)</a> 认为所有标准化因子载荷至少应为 0.5，理想情况下至少为 0.7。
+
+除了检查标准化因子载荷外，<a href="#Fornell & Larcker 1981">Fornell & Larcker (1981)</a> 还建议使用平均提取方差 (AVE) 来表示一个结构相对于其指标整体方差的平均方差解释量。当潜在结构解释其相关指标中至少一半的方差时，收敛效度合格。因此，AVE 不应低于 0.5，以表明可接受的聚敛效度水平<a href="#Hair et al 2009">(Hair et al., 2009)</a>。
+
+总而言之，若标准化的因子载荷大于0.7；CR 大于0.7；AVE 大于0.5，则说明各变量具有较好的聚敛效度 。
+
+CR 和 AVE 的计算公式如下，其中 $λ_i$ 是标准化的因子载荷，$n$ 是观测变量的个数。 
+$$
+CR = \frac{({\textstyle \sum_{i=1}^{n}} \lambda_i)^2}{({\textstyle \sum_{i=1}^{n}} \lambda_i)^2+{\textstyle \sum_{i=1}^{n}} (1-\lambda_i^2)} 
+$$
+$$
+AVE=\frac{({\textstyle \sum_{i=1}^{n}} \lambda_i)^2}{n}
+$$
 
 ### 区分效度 (Discriminant validity)
 
+评估区分效度的前提是聚敛效度合格，否则检查该潜变量是否可以与其他潜变量区分开来是没有意义的。存在许多关于评估区分效度的建议，<a href="#Rönkkö & Cho 2022">Rönkkö & Cho (2022)</a>  全面总结了关于区分效度的方法，以下罗列部分常用方法。
+
 #### Fornell-Larcker criterion
 
-区分效度可以通过比较任意两个构念的 AVE 的平方根和构念之间的相关性估计来评估 <a href="#Fornell & Larcker 1981">(Fornell & Larcker ,1981)</a> 
+<a href="#Fornell & Larcker 1981">Fornell & Larcker (1981)</a> 提出，当与两个潜变量相关的 AVEs 都大于潜变量之间的共享方差 (通常以平方相关系数表示) 时，区分效度就得到了建立。即，区分效度可以通过比较任意两个构念的 AVE 的平方根和潜变量之间的相关性估计来评估
 
 #### 交叉载荷 (Cross-loading)
 
-当题项在自身潜变量的载荷高于在其他潜变量上的载荷时，说明数据区分效度合格 <a href="#Chin 1998">(Chin, 1998)</a> 
+区分效度要求每个指标只在一个潜变量上唯一负荷。如果使用相同的指标来衡量两个潜变量，很难论证这两个潜变量是不同的。因此，当题项没有交叉负荷在其他潜变量时，即在自身潜变量的载荷高于在其他潜变量上的载荷，说明区分效度合格 <a href="#Chin 1998">(Chin, 1998)</a> 
 
 #### HTMT ratio
 
@@ -283,11 +299,15 @@ Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**�
 
 <a name="郑少芳 et al 2020">郑少芳, 唐方成, 葛安茹, & 刘锐剑. 高新技术企业间知识治理对协同创新绩效的影响. *科技进步与对策*, *37*(15), 107-115.</a>
 
+<a name="Anderson & Gerbing 1988">Anderson, J. C., & Gerbing, D. W. (1988). Structural equation modeling in practice: A review and recommended two-step approach. *Psychological Bulletin,*  *103*, 411–423.</a>
+
 <a name="Baron & Kenny 1986">Baron, R. M., & Kenny, D. A. (1986). The moderator–mediator variable distinction in social psychological research: Conceptual, strategic, and statistical considerations. *Journal of personality and social psychology*, *51*(6), 1173.</a>
 
 <a name="Benitez et al 2020">Benitez, J., Henseler, J., Castillo, A., & Schuberth, F. (2020). How to perform and report an impactful analysis using partial least squares: Guidelines for confirmatory and explanatory IS research. *Information & Management*, *57*(2), 103168.</a>
 
 <a name="Chen et al 2012">Chen, F. F., Hayes, A., Carver, C. S., Laurenceau, J. P., & Zhang, Z. (2012). Modeling general and specific variance in multifaceted constructs: A comparison of the bifactor model to other approaches. *Journal of personality*, *80*(1), 219-251.</a>
+
+<a name="Cheung et al 2024">Cheung, G. W., Cooper-Thomas, H. D., Lau, R. S., & Wang, L. C. (2024). Reporting reliability, convergent and discriminant validity with structural equation modeling: A review and best-practice recommendations. *Asia Pacific Journal of Management*, *41*(2), 745–783.</a>
 
 <a name="Chin 1998">Chin, W. W. (1998). The partial least squares approach to structural equation modeling. *Modern methods for business research/Lawrence Erlbaum Associates*.</a>
 
@@ -295,7 +315,7 @@ Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**�
 
 <a name="Fornell & Larcker 1981">Fornell, C., & Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. *Journal of marketing research*, *18*(1), 39-50.</a>
 
-<a name="Hair et al 2010">Hair J, F., Black W, C., Babin B, J., & Anderson R, E. (2010). Multivariate data analysis: A global perspective.</a>
+<a name="Hair et al 2009">Hair, J. F., Black, W. C., Babin, B. J., & Anderson, R. E. (2009). *Multivariate data analysis* (7th ed.). Prentice-Hall.</a>
 
 <a name="Hair et al 2019">Hair, J. F., Risher, J. J., Sarstedt, M., & Ringle, C. M. (2019). When to use and how to report the results of PLS-SEM. *European business review*, *31*(1), 2-24.</a>
 
@@ -309,6 +329,8 @@ Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**�
 
 <a name="Kock & Lynn 2012">Kock, N., & Lynn, G. (2012). Lateral Collinearity and Misleading Results in Variance-Based SEM: An Illustration and Recommendations. _Journal of the Association for Information Systems_, _13_(7), 546–580.</a>
 
+<a name="Lance et al 2006">Lance, C. E., Butts, M. M., & Michels, L. C. (2006). The sources of four commonly reported cutoff criteria: What did they really say? *Organizational, Research Methods*,  *9*, 202–220.</a>
+
 <a name="Maslowsky et al 2015">Maslowsky, J., Jager, J., & Hemken, D. (2015). Estimating and interpreting latent variable interactions: A tutorial for applying the latent moderated structural equations method. *International Journal of Behavioral Development*, *39*(1), 87–96. </a>
 
 <a name="McNeish 2018">McNeish, D. (2018). Thanks coefficient alpha, we' ll take it from here. *Psychological Methods*, *23*(3),412-433. </a>
@@ -320,6 +342,8 @@ Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**�
 <a name="Preacher & Hayes 2008">Preacher, K. J., & Hayes, A. F. (2008). Asymptotic and resampling strategies for assessing and comparing indirect effects in multiple mediator models. _Behavior research methods_, _40_(3), 879-891.    </a>
 
 <a name="Ringle et al 2012">Ringle, C. M., Sarstedt, M., & Straub, D. W. (2012). Editor's comments: a critical look at the use of PLS-SEM in" MIS Quarterly". *MIS quarterly*, iii-xiv.   </a>
+
+<a name="Rönkkö & Cho 2022">Rönkkö, M., & Cho, E. (2022). An updated guideline for assessing discriminant validity. *Organizational Research Methods,*  *25*, 6–14.  </a>
 
 <a name="Sobel 1982">Sobel, M. E. (1982). Asymptotic intervals for indirect effects in structural equations models. In S. Leinhart (Ed.), *Sociological methodology 1982* (pp.290-312). San Francisco: Jossey-Bass.</a>
 
