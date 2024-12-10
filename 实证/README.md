@@ -53,6 +53,8 @@ PLS-SEM 中可以添加一个无关的随机变量并使用内部模型的共线
 总而言之，若标准化的因子载荷大于0.7；CR 大于0.7；AVE 大于0.5，则说明各变量具有较好的聚敛效度 。
 
 CR 和 AVE 的计算公式如下，其中 $λ_i$ 是标准化的因子载荷，$n$ 是观测变量的个数。 
+
+
 $$
 CR = \frac{({\textstyle \sum_{i=1}^{n}} \lambda_i)^2}{({\textstyle \sum_{i=1}^{n}} \lambda_i)^2+{\textstyle \sum_{i=1}^{n}} (1-\lambda_i^2)} 
 $$
