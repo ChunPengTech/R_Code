@@ -82,7 +82,7 @@ $$
 
 卡方检验用于评估观察数据与模型预期之间的适配程度。理想情况下，卡方值应该小，并且 $p$ 值应该大，表示模型良好拟合数据。当新模型相较于原模型不能显著改善拟合时，卡方检验的显著结果意味着新模型与原模型对数据的解释能力没有明显提高，反而说明原模型的设定更合理。反之，则说明新模型设定更加合理。因此，通过构建包含不同因子个数的验证性因子模型，若其他模型与原模型相比，各拟合指标均变差，且卡方检验显著，则说明原模型区分效度较好 <a href="#沈伊默 et al 2019">(沈伊默等, 2019;</a><a href="#郑少芳 et al 2020"> 郑少芳等, 2020)</a> 
 
-<p align="left"><font face="黑体" size=2>表1 卡方差异检验示例表格</font></p>
+<center><font face="黑体" size=2>表1 卡方差异检验示例表格</font></center>
 
 
 |      Model      |    χ2    |  df  | χ2/df |  CFI  |  TLI  | RMSEA | SRMR  | 模型比较 |     Δχ2     | Δdf  |
@@ -156,7 +156,7 @@ $$
 
 检验统计量为 $z=\hat{a}\hat{b}/s_{ab}$，其中 $\hat{a}$ 和 $\hat{b}$ 分别是 a 和 b 的估计值， $\hat{a}\hat{b}$ 的标准误为： $se(ab)=\sqrt{\hat{b}^2 se_a^2 +\hat{a}^2se_b^2}$ 。 $se_a$ 和 $se_b$ 分别是 $\hat{a}$ 和 $\hat{b}$ 的标准误。 $|z| ＞ 1.96$ ，说明 $p < 0.05$，中介效应存在。
 
-<p align="left"><font face="黑体" size=2>表2 Sobel 法判断标准</font></p>
+<center><font face="黑体" size=2>表2 Sobel 法判断标准</font></center>
 
 
 |     z     |     p     |
@@ -260,7 +260,7 @@ LMS 将指标的联合分布近似为有限个条件正态分布的混合分布�
 
 PLS-SEM 和 CB-SEM都是有用的统计分析方法，选择原因通常如下表所示。
 
-<p align="left"><font face="黑体" size=2>表3 CB SEM 和 PLS-SEM的选择标准</font></p>
+<center><font face="黑体" size=2>表3 CB SEM 和 PLS-SEM的选择标准</font></center>
 
 |    类别    |          CB SEM          |         PLS-SEM          |
 | :--------: | :----------------------: | :----------------------: |
