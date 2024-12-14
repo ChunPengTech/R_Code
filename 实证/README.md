@@ -42,7 +42,9 @@ PLS-SEM 中可以添加一个无关的随机变量并使用内部模型的共线
 
 ### 信度
 
-分量表的内部一致性使用 Cronbach's alpha (α) 计算。尽管 α 不基于 SEM，但它在 SEM 的研究中是最常报告的可靠性系数。 尽管 α 大于0.7 已被广泛用作足够可靠性的标准 <a href="#Kelley & Pornprasertmanit 2016">(Kelley & Pornprasertmanit., 2016)</a>，同时 <a href="#McNeish 2018">McNeish (2018)</a>  指出最好加上置信区间。但 <a href="#Lance et al 2006">Lance et al. (2006)</a> 建议大多数研究的可靠性标准应该为 0.8，α 为 0.7 表明量表的可靠性仅为中等。 
+分量表的内部一致性使用 Cronbach's alpha (α) 计算。α 不基于 SEM，但它在 SEM 研究中是最常报告的可靠性系数。 尽管 α 大于0.7 已被广泛用作足够可靠性的标准 <a href="#Kelley & Pornprasertmanit 2016">(Kelley & Pornprasertmanit., 2016)</a>，同时 <a href="#McNeish 2018">McNeish (2018)</a> 指出最好加上置信区间，但 <a href="#Lance et al 2006">Lance et al. (2006)</a> 建议大多数研究的可靠性标准应该为 0.8，α 为 0.7 表明量表的可靠性仅为中等。 
+
+ 此外，α 关于指标间因子载荷相等的假设通常不适用于潜在结构。当潜在指标显示不平等的因素负荷时， α 通常错误估计潜在结构的可靠性，因此，α并不适合作为一种可靠的测量指标 <a href="#Hayes & Coutts 2020">(Hayes & Coutts, 2020)</a> 。基于 SEM 研究的一个更准确和首选的可靠性指标是结构信度 (Construct reliability)，也被称为 McDonald's omega (ω)，组合信度 (Composite reliability) 或同源信度 (Congeneric reliability)，<a href="#Hair et al 2009">Hair et al. (2009)</a> 指出，0.7 或更高的 CR 值表示良好的可靠性。
 
 ###  聚敛效度 (Convergent validity)
 
@@ -320,6 +322,8 @@ Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**�
 <a name="Hair et al 2009">Hair, J. F., Black, W. C., Babin, B. J., & Anderson, R. E. (2009). *Multivariate data analysis* (7th ed.). Prentice-Hall.</a>
 
 <a name="Hair et al 2019">Hair, J. F., Risher, J. J., Sarstedt, M., & Ringle, C. M. (2019). When to use and how to report the results of PLS-SEM. *European business review*, *31*(1), 2-24.</a>
+
+<a name="Hayes & Coutts 2020">Hayes, A. F., & Coutts, J. J. (2020). Use Omega Rather than Cronbach’s Alpha for Estimating Reliability. But…. *Communication Methods and Measures*, *14*(1), 1–24.</a>
 
 <a name="Henseler et al 2015">Henseler, J., Ringle, C. M., & Sarstedt, M. (2015). A new criterion for assessing discriminant validity in variance-based structural equation modeling. *Journal of the academy of marketing science*, *43*, 115-135.</a>
 
