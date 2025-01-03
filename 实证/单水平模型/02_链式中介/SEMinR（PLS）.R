@@ -88,8 +88,6 @@ summary_boot$bootstrapped_paths %>% print_table()
 ## 总效应系数
 summary_boot$bootstrapped_total_paths %>% print_table()
 
-summary_boot$
-
   # --------- Bootstrapping mediation ---------
 
   specific_effect_significance(boot_simple,
