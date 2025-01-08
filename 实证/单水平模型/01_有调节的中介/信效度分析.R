@@ -1,4 +1,7 @@
-library(bruceR)
+pacman::p_load(
+  lavaan, bruceR, semTools, tidyverse, tidySEM
+)
+
 set.wd()
 data <- import("paper.xlsx")
 
@@ -9,11 +12,6 @@ check_factorstructure(data[1:28])
 EFA(data, varrange = "DT11:OT32")
 
 # -------- 验证性因子分析 --------
-
-library(lavaan)
-library(semTools)
-library(tidyverse)
-library(tidySEM)
 
 model <- "
 DT1 =~ DT11 + DT12 + DT13
@@ -38,12 +36,14 @@ CFA(data,
 )
 
 # -------- 信度与聚敛效度 -------- 
+
 reliability(fit) %>% print_table(digits = 3)
 
 Alpha(data, "DT", 11:13)
 ## α系数也可以用Aplha函数分别求
 
 # -------- 区分效度 -------- 
+
 lavInspect(fit, "cor.lv")
 matrix <- lavInspect(fit, "cor.lv")
 diag(matrix) <- sqrt(AVE(fit)) ## 将相关系数的对角线替换为AVE的平方根

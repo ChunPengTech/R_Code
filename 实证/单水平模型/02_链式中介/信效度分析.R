@@ -1,5 +1,8 @@
 # 载入数据
-library(bruceR)
+pacman::p_load(
+  lavaan, bruceR, tidySEM, semTools, tidyverse
+)
+
 set.wd()
 data <- import("data_298.csv", as = "data.frame")
 data
@@ -13,15 +16,9 @@ print(fa_result$loadings, cutoff = 0.5)
 
 # -------- kmo和bartlett检验 --------
 
-# performance::check_kmo(data)
-# performance::check_sphericity_bartlett(data)
-performance::check_factorstructure(data) ## kmo和bartlett检验
+check_factorstructure(data)
 
 # -------- 验证性因子分析 --------
-
-library(lavaan)
-library(semTools)
-library(tidyverse)
 
 model <- "
 x =~ x1+x2+x3+x4+x5

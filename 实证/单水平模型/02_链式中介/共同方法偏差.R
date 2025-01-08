@@ -1,6 +1,6 @@
-library(lavaan)
-library(bruceR)
-library(tidySEM)
+pacman::p_load(
+  lavaan, bruceR, tidySEM
+)
 
 set.wd()
 data <- import("data_298.csv", as = "tibble")

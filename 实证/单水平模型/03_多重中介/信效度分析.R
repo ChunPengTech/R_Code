@@ -1,5 +1,7 @@
-# 载入数据
-library(bruceR)
+pacman::p_load(
+  lavaan, bruceR, tidySEM, tidyverse, semTools
+)
+
 set.wd()
 data <- import("data304n.csv", as = "tibble")
 
@@ -10,11 +12,6 @@ EFA(data, varrange = "xa1:y5")
 check_factorstructure(data)
 
 # -------- 验证性因子分析 --------
-
-library(lavaan)
-library(semTools)
-library(tidyverse)
-
 
 model <- "
 xa =~ xa1+xa2+xa3+xa4+xa5+xa6

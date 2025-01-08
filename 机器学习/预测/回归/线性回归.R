@@ -1,3 +1,6 @@
+library(easystats)
+library(car) 
+
 mtcars
 str(mtcars)
 skimr::skim(mtcars)
@@ -16,14 +19,11 @@ fitted(lmfit)                   ## 基于原数据的拟合模型的预测值
 confint(lmfit, level = 0.95)    ## 模型的置信区间
 
 ## 多重共线性诊断
-library(car) 
 vif(lmfit)
 bruceR::model_summary(lmfit)
 autoReg::gaze(lmfit)
 
-
 # 模型诊断
-library(easystats)
 check_model(lmfit)
 model_parameters(lmfit) # 模型参数
 model_performance(lmfit)  # 模型性能
@@ -32,7 +32,6 @@ check_outliers(lmfit)    # 离群值
 check_normality(lmfit)  # 正态性
 model_dashboard(lmfit)   # 仪表盘
 report(lmfit)
-
 
 ## 预测
 pred <- predict(lmfit, newdata = mtcars)  ## 基于新数据的模型预测值，新旧数据集的变量名需要保持一致

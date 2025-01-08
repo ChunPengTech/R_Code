@@ -1,4 +1,6 @@
 library(bruceR)
+library(lavaan)
+
 set.wd()
 data <- import("paper.xlsx", as = "data.frame")
 
@@ -6,7 +8,6 @@ data <- import("paper.xlsx", as = "data.frame")
 EFA(data, varrange = "DT11:OT32")
 
 # -------- 验证性因子分析 --------
-library(lavaan)
 
 ## 初始模型
 baseline <- "

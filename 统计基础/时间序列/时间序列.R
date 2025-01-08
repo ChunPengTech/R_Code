@@ -1,8 +1,8 @@
 # 1. 加载所需包，打开数据集
 
-library(forecast)
-library(tseries)
-library(bruceR)
+pacman::p_load(
+  bruceR, forecast, tseries
+)
 
 data(Nile) # 打开数据集
 

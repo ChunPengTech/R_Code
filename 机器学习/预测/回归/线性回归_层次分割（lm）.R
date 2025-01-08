@@ -1,9 +1,9 @@
 # https://mp.weixin.qq.com/s/UKmVwXYTLO7UIRRbKaUv1Q
 
 # 加载所需包
-library(glmm.hp)
-library(ggplot2)
-library(bruceR)
+pacman::p_load(
+  glmm.hp, ggplot2, bruceR
+)
 
 # 读取数据
 data <- import("egdata.csv", as = "tibble")

@@ -1,9 +1,9 @@
 # https://mp.weixin.qq.com/s/UKmVwXYTLO7UIRRbKaUv1Q
 
 # 加载所需包
-library(glmm.hp)
-library(ggplot2)
-library(bruceR)
+pacman::p_load(
+  glmm.hp, ggplot2, bruceR
+)
 
 # 读取数据
 data <- import("egdata.csv", as = "tibble")
@@ -67,7 +67,6 @@ ggplot(data_plot, aes(x = variable, y = percentage, fill = significance)) +
     axis.text.x = element_text(size = 10, hjust = 1), # x 轴标签旋转
     panel.background = element_rect(fill = "white")
   )
-
 
 
 # 按 percentage 降序排列

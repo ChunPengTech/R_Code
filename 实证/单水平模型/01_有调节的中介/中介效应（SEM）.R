@@ -1,7 +1,6 @@
-## 导入数据并加载需要的包
-library(lavaan)
-library(bruceR)
-library(tidySEM)
+pacman::p_load(
+  lavaan, bruceR, tidySEM
+)
 
 set.wd()
 data <- import("paper.xlsx", as = "data.frame")

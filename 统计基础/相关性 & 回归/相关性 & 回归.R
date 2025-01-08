@@ -1,8 +1,6 @@
-library(bruceR)
-library(easystats)
-library(sjPlot)
-library(apaTables)
-library(autoReg)
+pacman::p_load(
+  bruceR, easystats, sjPlot, apaTables, autoReg
+)
 
 data(mtcars)
 check_kmo(mtcars)

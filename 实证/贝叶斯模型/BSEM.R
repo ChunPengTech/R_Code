@@ -1,7 +1,6 @@
-library(lavaan)
-library(bruceR)
-library(tidyverse)
-library(blavaan)
+pacman::p_load(
+  lavaan, bruceR, tidyverse, blavaan
+)
 
 set.wd()
 data <- import("data_298.csv", as = "data.frame")

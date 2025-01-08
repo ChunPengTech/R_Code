@@ -1,4 +1,7 @@
-library(bruceR)
+pacman::p_load(
+  bruceR, tidyverse, stargazer, mediation
+)
+
 set.wd()
 data <- import("main variable.xlsx", as = "data.frame")
 
@@ -25,7 +28,6 @@ print_table(fitb, file = "Results.doc")
 fitc <- lm(DT ~ IKS + KF, data) # 4.反向路径
 summary(fitc)
 
-library(stargazer)
 stargazer(fit, fita, fitb, fitc,
   type = "html",
   title = "Baron and Kenny Method",
@@ -42,8 +44,6 @@ compare_performance(fit, fitb)
 test_performance(fit, fitb) # 同一个因变量
 
 # -------- mediation::mediate --------
-
-library(mediation)
 
 med <- lm(KF ~ DT, data)
 out <- lm(IKS ~ DT + KF, data)

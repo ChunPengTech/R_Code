@@ -1,8 +1,6 @@
-library(lavaan)
-library(bruceR)
-library(semPlot)
-library(tidyverse)
-library(tidySEM)
+pacman::p_load(
+  lavaan, bruceR, tidySEM, tidyverse, semPlots
+)
 
 set.wd()
 data <- import("data_298.csv", as = "data.frame")
@@ -18,30 +16,13 @@ y ~ c*x
 
 fit1 <- sem(model = model1, data = data)
 
-## 其他方法
-
-broom::glance(fit1)
-
-performance::performance(fit1, cc("Chi2, Chi2_df, GFI, CFI, SRMR, RMSEA"))
-
-goodfit <- tidySEM::table_fit(fit1)
-goodfit |>
+goodfit <- table_fit(fit1)
+goodfit |> 
   mutate("chisq/df" = chisq / df) |>
   select(chisq, df, "chisq/df", cfi, tli, rmsea, srmr) |>
   print_table()
 
-fitmeasures(fit1, cc("chisq, df, cfi, tli, rmsea, srma"), output = "matrix")
-
-broom::tidy(fit1) |>
-  filter(op == "~") |>
-  select(-op, -label, -std.lv) |>
-  rename(B = estimate, S.E. = std.error, β = std.all, path = term, z = statistic) |>
-  print_table()
-
-parameters::parameters(fit1)
-
 lavaan_summary(fit1)
-
 
 semPaths(fit1,
   whatLabels = "std",
