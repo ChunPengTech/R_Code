@@ -44,13 +44,13 @@ PLS-SEM 中可以添加一个无关的随机变量并使用内部模型的共线
 
 分量表的内部一致性使用 Cronbach's alpha (α) 计算。α 不基于 SEM，但它在 SEM 研究中是最常报告的可靠性系数。 尽管 α 大于0.7 已被广泛用作足够可靠性的标准 <a href="#Kelley & Pornprasertmanit 2016">(Kelley & Pornprasertmanit., 2016)</a>，同时 <a href="#McNeish 2018">McNeish (2018)</a> 指出最好加上置信区间，但 <a href="#Lance et al 2006">Lance et al. (2006)</a> 建议大多数研究的可靠性标准应该为 0.8，α 为 0.7 表明量表的可靠性仅为中等。 
 
- 此外，α 关于指标间因子载荷相等的假设通常不适用于潜在结构。当潜在指标显示不平等的因素负荷时， α 通常错误估计潜在结构的可靠性，因此，α并不适合作为一种可靠的测量指标 <a href="#Hayes & Coutts 2020">(Hayes & Coutts, 2020)</a> 。基于 SEM 研究的一个更准确和首选的可靠性指标是结构信度 (Construct reliability)，也被称为 McDonald's omega (ω)，组合信度 (Composite reliability) 或同源信度 (Congeneric reliability)，<a href="#Hair et al 2009">Hair et al. (2009)</a> 指出，0.7 或更高的 CR 值表示良好的可靠性。
+然而，α 关于指标间因子载荷相等的假设通常不适用于潜在结构。当潜在指标显示不平等的因子负荷时， α 通常错误估计潜在结构的可靠性，因此，α并不适合作为一种可靠的测量指标 <a href="#Hayes & Coutts 2020">(Hayes & Coutts, 2020)</a> 。基于 SEM 研究的一个更准确和首选的可靠性指标是结构信度 (Construct reliability)，也被称为 McDonald's omega (ω)，组合信度 (Composite reliability) 或同源信度 (Congeneric reliability)，<a href="#Hair et al 2009">Hair et al. (2009)</a> 指出，0.7 或更高的 CR 值表示良好的可靠性。
 
 ###  聚敛效度 (Convergent validity)
 
 <a href="#Fornell & Larcker 1981">Fornell & Larcker (1981)</a> 提出使用可靠性来评估聚敛效度，然而，研究人员也认为，仅仅检查可靠性不足以评估聚敛效度。<a href="#Anderson & Gerbing 1988">Anderson & Gerbing (1988)</a> 建议通过检查标准化因子载荷的统计显著性来评估聚敛效度。然而，由于验证性因子分析可能涉及使用相对较大的样本（通常是 200 个或更多）以确保收敛和可靠的结果，即使是小的标准化因子负荷也可能具有统计显著性。因此，仅仅评估因子负荷的显著性可能不够。 研究人员提出了其他规则来评估标准化因子载荷的大小。例如， <a href="#Hair et al 2009">Hair et al. (2009)</a> 认为所有标准化因子载荷至少应为 0.5，理想情况下至少为 0.7。
 
-除了检查标准化因子载荷外，<a href="#Fornell & Larcker 1981">Fornell & Larcker (1981)</a> 还建议使用平均提取方差 (AVE) 来表示一个结构相对于其指标整体方差的平均方差解释量。当潜在结构解释其相关指标中至少一半的方差时，收敛效度合格。因此，AVE 不应低于 0.5，以表明可接受的聚敛效度水平<a href="#Hair et al 2009">(Hair et al., 2009)</a>。
+除了检查标准化因子载荷外，<a href="#Fornell & Larcker 1981">Fornell & Larcker (1981)</a> 还建议使用平均提取方差 (AVE) 来表示一个结构相对于其指标整体方差的平均方差解释量。当潜在结构解释其相关指标中至少一半的方差时，聚敛效度合格。因此，AVE 不应低于 0.5，以表明可接受的聚敛效度水平<a href="#Hair et al 2009">(Hair et al., 2009)</a>。
 
 总而言之，若标准化的因子载荷大于0.7；CR 大于0.7；AVE 大于0.5，则说明各变量具有较好的聚敛效度 。
 
@@ -78,7 +78,9 @@ $$
 
 #### HTMT ratio
 
-<a href="#Henseler et al 2015">Henseler et al. (2015)</a> 通过模拟研究，发现 Fornell - Larcker 准则和交叉载荷检验在常见的研究情境中并不能可靠地检测出区分效度。因此，他们提出了一种基于多特质-多方法矩阵 (multitrait-multimethod matrix, mtmm) 的方法来评估区分效度，即相关性的异质-单质比率 (the heterotrait-monotrait ratio of correlations)。如果 HTMT 值低于 0.90，则两个测量结构之间有较好的区分效度。一般而言， 0.85是严格的标准，0.90 是比较宽松的标准。
+<a href="#Henseler et al 2015">Henseler et al. (2015)</a> 通过模拟研究，发现 Fornell - Larcker 准则和交叉载荷检验在常见的研究情境中并不能可靠地检测出区分效度。因此，他们提出了一种基于多特质-多方法矩阵 (multitrait-multimethod matrix, mtmm) 的方法来评估区分效度，即相关性的异质-同质比率 (the heterotrait-monotrait ratio of correlations)。如果 HTMT 值低于 0.90，则两个测量结构之间有较好的区分效度。一般而言， 0.85是严格的标准，0.90 是比较宽松的标准。
+
+然而，<a href="#Roemer et al 2021">Roemer et al. (2021) </a>认为 HTMT 假设中对于 tau 等价测量模型的要求在大多数实证研究中不太可能成立。为了解决这一问题，他们对原始 HTMT 方法进行了修改，并引入了一种新的同构测量模型一致性度量——HTMT2。模型研究结果表明，相较于 HTMT，HTMT2 在估计潜在变量之间的相关性时表现出更小的偏差，尤其是在指标负荷模式存在异质性的情况下。因此，在评估同构测量模型的区分效度时，建议优先采用 HTMT2，而非 HTMT。
 
 #### 卡方差异检验	
 
@@ -348,6 +350,8 @@ Bayesian SEM 同样可以较好的用于假设检验，具体内容见上述**�
 <a name="Preacher & Hayes 2008">Preacher, K. J., & Hayes, A. F. (2008). Asymptotic and resampling strategies for assessing and comparing indirect effects in multiple mediator models. _Behavior research methods_, _40_(3), 879-891.    </a>
 
 <a name="Ringle et al 2012">Ringle, C. M., Sarstedt, M., & Straub, D. W. (2012). Editor's comments: a critical look at the use of PLS-SEM in" MIS Quarterly". *MIS quarterly*, iii-xiv.   </a>
+
+<a name="Roemer et al 2021">Roemer, E., Schuberth, F., & Henseler, J. (2021). HTMT2–an improved criterion for assessing discriminant validity in structural equation modeling. *Industrial management & data systems*, *121*(12), 2637-2650.  </a>
 
 <a name="Rönkkö & Cho 2022">Rönkkö, M., & Cho, E. (2022). An updated guideline for assessing discriminant validity. *Organizational Research Methods,*  *25*, 6–14.  </a>
 
