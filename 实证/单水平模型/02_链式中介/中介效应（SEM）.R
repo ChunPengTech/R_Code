@@ -76,7 +76,7 @@ bca <- parameterEstimates(fit2_boot, boot.ci.type = "bca.simple", standardized =
 names(bca)
 
 bca_res <- bca |>
-  mutate(B = est, β = std.lv) |>
+  mutate(B = est, β = std.all) |>
   select(
     lhs, op, rhs,
     B, β,
