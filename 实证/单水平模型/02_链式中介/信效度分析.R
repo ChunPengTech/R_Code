@@ -1,11 +1,11 @@
-# 载入数据
-pacman::p_load(
-  lavaan, bruceR, tidySEM, semTools, tidyverse
+library(pacman)
+
+p_load(
+  bruceR, lavaan, tidySEM, semTools, tidytable
 )
 
 set.wd()
-data <- import("data_298.csv", as = "data.frame")
-data
+data <- import("data_298.csv", as = "tibble")
 
 # -------- 探索性因子分析 -------- 
 
@@ -16,7 +16,9 @@ print(fa_result$loadings, cutoff = 0.5)
 
 # -------- kmo和bartlett检验 --------
 
-check_factorstructure(data)
+# performance::check_kmo(data)
+# performance::check_sphericity_bartlett(data)
+performance::check_factorstructure(data) ## kmo和bartlett检验
 
 # -------- 验证性因子分析 --------
 
@@ -43,7 +45,6 @@ data |> Alpha("x", 1:5)
 
 reliability(fit) |> print_table(digits = 3)
 
-
 # -------- 区分效度 --------
 
 lavInspect(fit, "cor.lv")
@@ -51,3 +52,8 @@ matrix <- lavInspect(fit, "cor.lv")
 diag(matrix) <- sqrt(AVE(fit))
 ## 将相关系数的对角线替换为AVE的平方根
 matrix
+
+# HTMT
+htmt(model, data, absolute = F, htmt2 = F)
+# HTMT2
+htmt(model, data)
