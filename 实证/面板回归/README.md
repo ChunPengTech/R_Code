@@ -16,7 +16,8 @@
 
 ## 替换估计方法
 
-### Toblt模型
+### Tobit模型
+
 > 李春涛,闫续文,宋敏,等.金融科技与企业创新——新三板上市公司的证据[J].中国工业经济,2020,(01):81-98.
 >
 > Faleye O, Kovacs T, Venkateswaran A. Do better-connected CEOs innovate more?[J]. Journal of Financial and Quantitative Analysis, 2014, 49(5-6): 1201-1225.
