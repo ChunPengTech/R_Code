@@ -1,7 +1,7 @@
 pacman::p_load(lavaan, bruceR, tidySEM)
 
 set.wd()
-data <- import("data304n.csv", as = "data.frame")
+data <- import("data304n.csv", as = "data.tibble")
 
 # -------- 探索性因子分析 --------
 
