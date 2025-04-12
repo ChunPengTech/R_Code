@@ -1,6 +1,6 @@
-pacman::p_load(
-  lavaan, bruceR, tidySEM, broom
-)
+library(lavaan)
+library(bruceR)
+library(tidySEM)
 
 set.wd()
 data <- import("data304n.csv", as = "data.frame")
@@ -103,9 +103,7 @@ G ~~ 0*mb
 G ~~ 0*mc
 G ~~ 0*y
 "
-
-bifactor_model <- cfa(model = bifactor, data = data, orthogonal=TRUE)
-
+bifactor_model <- cfa(model = bifactor, data = data)
 
 # -------- 汇总信息 --------
 
