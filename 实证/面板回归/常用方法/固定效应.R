@@ -6,7 +6,7 @@ library(fixest)
 set.wd()
 data <- import("data.xlsx", as = "tibble")
 
-# 可以直接在data设置标准误，比如"iid", "hetero"，默认是聚类
+# 可以设置标准误类型，比如"iid", "hetero"，默认是聚类（Time）
 
 # -------- 固定年份 --------
 
@@ -18,7 +18,7 @@ indv_fix <- feols(y ~ x + c1 + c6 + c7 + c8 | province, data)
 
 # -------- 固定年份和省份 --------
 
-two_fix <- feols(y ~ x + c1 + c6 + c7 + c8 | year + province, data, cluster = "province", se = "hetero") # 异方差—稳健标准误
+two_fix <- feols(y ~ x + c1 + c6 + c7 + c8 | year + province, data, se = "hetero") # 异方差—稳健标准误
 
 # -------- 汇总结果esttable --------
 
