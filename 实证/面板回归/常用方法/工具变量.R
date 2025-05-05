@@ -4,11 +4,10 @@ library(fixest)
 set.wd()
 data <- import("data.xlsx", as = "tibble")
 
-data <- data |>
-  group_by(province) |>
-  mutate(L.y = lag(y), L.x = lag(x))
+# 类似 xtset province id
+setFixest_estimation(panel.id = ~ province + year)
 
-iv_fix <- feols(y ~  c1 + c6 + c7 + c8 | year + province | x ~ L.x, data, se = "hetero")
+iv_fix <- feols(y ~  c1 + c6 + c7 + c8 | year + province | x ~ l(x, 1), data, se = "hetero")
 
 # 查看工具变量法的结果
 esttable(iv_fix, digits = 3)
